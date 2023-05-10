@@ -1,0 +1,14 @@
+Package: STATEROOM
+Type: Package
+Title: SpaTiAl resulTs gEneRatOr fOr iMpact (STATEROOM)
+Version: 0.0.1
+Authors@R: c(
+    person("Abhijeet", "Mishra", , "A.Mishra@cgiar.org", role = c("aut", "cre"))
+    )
+Description: Spatial results generator for IMPACT
+License: GPL (>= 3)
+Encoding: UTF-8
+RoxygenNote: 7.2.3
+Remotes:
+    github::eddelbuettel/drat
+Additional_repositories: https://ifpri.github.io/drat
