@@ -1,14 +1,22 @@
 Package: STATEROOM
 Type: Package
 Title: SpaTiAl resulTs gEneRatOr fOr iMpact (STATEROOM)
-Version: 0.0.1
+Version: 1.0.0
 Authors@R: c(
     person("Abhijeet", "Mishra", , "A.Mishra@cgiar.org", role = c("aut", "cre"))
     )
-Description: Spatial results generator for IMPACT
+Description: Spatial results generator for IMPACT.
 License: GPL (>= 3)
 Encoding: UTF-8
 RoxygenNote: 7.2.3
+Imports:
+    DOORMAT (>= 3.7.4),
+    ggplot2 (>= 3.4.2),
+    sf (>= 1.0.12),
+    viridis (>= 0.6.3),
+    ggthemes (>= 4.2.4),
+    utils,
+    stats
 Remotes:
     github::eddelbuettel/drat
 Additional_repositories: https://ifpri.github.io/drat
