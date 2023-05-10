@@ -45,22 +45,21 @@ readFPU <- function(gdx,
 
     temp <- data.frame()
 
-    fill_fpus <- function(missing_vector, target_data){
+    fill_fpus <- function(missing_vector, target_data) {
         # Find how many unique columns need to be created for each FPU
-        unique_finder <- target_data[target_data$fpu == head(target_data$fpu, 1),]
+        unique_finder <-
+            target_data[target_data$fpu == head(target_data$fpu, 1), ]
         # Find number of rows needed in dummy data frame
         rows <- nrow(unique_finder)
 
         ignore_cols <- c("fpu", "value")
-        for(fpus in missing_vector){
+        for (fpus in missing_vector) {
             # Create dummy data frame with NAs
             dummy <- data.frame(matrix(nrow = rows, ncol = ncol(target_data)))
             # Give same names are model data
             colnames(dummy) <- colnames(target_data)
             # Dump missing FPUs
-            # dummy$fpu <- missing_vector
-            # Set columns to ignore
-            dummy[,"fpu"] <- fpus
+            dummy[, "fpu"] <- fpus
             for (col in setdiff(colnames(dummy), ignore_cols)) {
                 dummy[, col] <- unique(unique_finder[, col])
             }

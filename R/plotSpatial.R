@@ -12,6 +12,8 @@
 #' @import ggplot2
 #' @importFrom ggthemes theme_map
 #' @importFrom viridis scale_fill_viridis
+#' @importFrom stats reformulate
+#' @importFrom utils head
 #' @export
 #' @examples
 #' \dontrun{

@@ -12,7 +12,7 @@
 readSHP <- function() {
     target_name <- "fpu2015_polygons_v3_multipart_polygons"
     fpath <-
-        dirname(system.file("extdata", paste0(target_name,".shp"),
+        dirname(system.file("extdata", paste0(target_name, ".shp"),
                             package = "STATEROOM"))
     s <- read_sf(dsn = fpath, layer = target_name)
     return(s)
