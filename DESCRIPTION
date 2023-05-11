@@ -1,7 +1,7 @@
 Package: STATEROOM
 Type: Package
 Title: SpaTiAl resulTs gEneRatOr fOr iMpact (STATEROOM)
-Version: 1.0.0
+Version: 1.1.0
 Authors@R: c(
     person("Abhijeet", "Mishra", , "A.Mishra@cgiar.org", role = c("aut", "cre"))
     )
