@@ -2,6 +2,8 @@
 #'
 #' @param gdx GDX from IMPACT run
 #' @param param_name Name of paramter with FPU column in IMPACT model
+#' @param data If FPU level data is already available. If used, do not provide
+#' 'gdx' and 'param_name' information. Defaults to NULL.
 #' @param yrs Years to subset. HIGHLY recommended to use this for performance
 #' reasons as the data frame might be too big to read all years information.
 #' @param crop Crops to subset if available. HIGHLY recommended to use this
@@ -19,9 +21,10 @@
 #' }
 readFPU <- function(gdx,
                     param_name,
+                    data = NULL,
                     yrs = NULL,
                     crop = NULL) {
-    data <- readGDX(gdx = gdx, name = param_name)$data
+    if (is.null(data)) data <- readGDX(gdx = gdx, name = param_name)$data
     if (!("fpu" %in% colnames(data))) stop("Column 'fpu' not found in ",
                                            param_name)
     shp <- readSHP()
@@ -33,10 +36,10 @@ readFPU <- function(gdx,
 
     if (is.numeric(yrs) || is.character(crop)) {
 
-        if (is.null(crop))  data <- data[data$yrs == yrs, ]
-        if (is.null(yrs))   data <- data[data$j == crop, ]
+        if (is.null(crop))  data <- data[data$yrs %in% yrs, ]
+        if (is.null(yrs))   data <- data[data$j %in% crop, ]
         if (!is.null(yrs) && !is.null(crop))
-            data <- data[data$yrs == yrs & data$j == crop, ]
+            data <- data[data$yrs %in% yrs & data$j %in% crop, ]
 
     }
 

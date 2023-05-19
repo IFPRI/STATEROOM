@@ -19,20 +19,19 @@
 #' \dontrun{
 #' plotSpatial(df)
 #' }
-plotSpatial <- function(df, wrap = NULL, ncol = NULL,
+plotSpatial <- function(df, wrap = NULL, ncol = NULL, value_fix = 1,
                         plot_title = NULL, legend_title = NULL) {
 
     value <- NULL
 
     p <- ggplot() +
-        geom_sf(data = df, aes(fill = value)) +
+        geom_sf(data = df, aes(fill = value/value_fix)) +
         scale_fill_viridis(option = "magma", direction = -1) +
         ggtitle(plot_title) +
         labs(fill = legend_title) +
         theme_map(base_size = 25) +
         theme(strip.background  = element_blank(),
-              legend.background = element_rect(fill = "transparent")) + {
-            if (!is.null(wrap)) facet_wrap(reformulate(wrap), ncol = ncol)
-        }
+              legend.background = element_rect(fill = "transparent")) +
+        facet_wrap(yrs~j)
     return(p)
 }

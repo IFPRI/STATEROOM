@@ -8,6 +8,7 @@ plotSpatial(
   df,
   wrap = NULL,
   ncol = NULL,
+  value_fix = 1,
   plot_title = NULL,
   legend_title = NULL
 )

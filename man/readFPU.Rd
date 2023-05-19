@@ -4,12 +4,15 @@
 \alias{readFPU}
 \title{Read FPU level data and merge with FPU shapefile}
 \usage{
-readFPU(gdx, param_name, yrs = NULL, crop = NULL)
+readFPU(gdx, param_name, data = NULL, yrs = NULL, crop = NULL)
 }
 \arguments{
 \item{gdx}{GDX from IMPACT run}
 
 \item{param_name}{Name of paramter with FPU column in IMPACT model}
+
+\item{data}{If FPU level data is already available. If used, do not provide
+'gdx' and 'param_name' information. Defaults to NULL.}
 
 \item{yrs}{Years to subset. HIGHLY recommended to use this for performance
 reasons as the data frame might be too big to read all years information.}
