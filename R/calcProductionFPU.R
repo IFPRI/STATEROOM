@@ -1,6 +1,8 @@
 #' FPU Level Production
 #'
 #' @param gdx final GDX from an IMPACT run
+#' @param yrs Years to subset. Defaults to NULL for all years.
+#' @param crop Crops to subset. Defaults to NULL for all crops.
 #' @return FPU level production as sf object
 #'
 #' @importFrom DOORMAT readGDX

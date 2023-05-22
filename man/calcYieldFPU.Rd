@@ -8,6 +8,10 @@ calcYieldFPU(gdx, yrs = NULL, crop = NULL)
 }
 \arguments{
 \item{gdx}{final GDX from an IMPACT run}
+
+\item{yrs}{Years to subset. Defaults to NULL for all years.}
+
+\item{crop}{Crops to subset. Defaults to NULL for all crops.}
 }
 \value{
 FPU level production as sf object

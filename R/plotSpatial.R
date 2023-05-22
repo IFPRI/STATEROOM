@@ -7,6 +7,8 @@
 #' @param ncol Number of columns to be plotted. Defaults to NULL.
 #' @param plot_title Title of the plot. Defaults to NULL.
 #' @param legend_title Title of the legend, Defaults to NULL.
+#' @param scale Numeric value to scale output. Use 1e3 for thousand to million
+#' conversion for example. Defaults to 1.
 #'
 #' @return ggplot object with FPU level IMPACT results
 #' @import ggplot2
@@ -19,19 +21,18 @@
 #' \dontrun{
 #' plotSpatial(df)
 #' }
-plotSpatial <- function(df, wrap = NULL, ncol = NULL, value_fix = 1,
+plotSpatial <- function(df, wrap = NULL, ncol = NULL, scale = 1,
                         plot_title = NULL, legend_title = NULL) {
 
     value <- NULL
 
     p <- ggplot() +
-        geom_sf(data = df, aes(fill = value/value_fix)) +
+        geom_sf(data = df, aes(fill = value / scale)) +
         scale_fill_viridis(option = "magma", direction = -1) +
         ggtitle(plot_title) +
         labs(fill = legend_title) +
         theme_map(base_size = 25) +
         theme(strip.background  = element_blank(),
-              legend.background = element_rect(fill = "transparent")) +
-        facet_wrap(yrs~j)
+              legend.background = element_rect(fill = "transparent"))
     return(p)
 }

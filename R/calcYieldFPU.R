@@ -1,6 +1,8 @@
 #' FPU Level Production
 #'
 #' @param gdx final GDX from an IMPACT run
+#' @param yrs Years to subset. Defaults to NULL for all years.
+#' @param crop Crops to subset. Defaults to NULL for all crops.
 #' @return FPU level production as sf object
 #'
 #' @importFrom DOORMAT readGDX
@@ -56,7 +58,7 @@ calcYieldFPU <- function(gdx, yrs = NULL, crop = NULL) {
 
     message(".....Re-calculating FPU level yield")
 
-    yield_mag = production_fpu / area_fpu_mag
+    yield_mag <- production_fpu / area_fpu_mag
 
     yld <- magclass::as.data.frame(yield_mag)[, -1]
 

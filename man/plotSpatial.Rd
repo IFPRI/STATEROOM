@@ -8,7 +8,7 @@ plotSpatial(
   df,
   wrap = NULL,
   ncol = NULL,
-  value_fix = 1,
+  scale = 1,
   plot_title = NULL,
   legend_title = NULL
 )
@@ -21,6 +21,9 @@ indicators. For example, use "fctr" if you want to plot irrigated and rainfed
 areas in case area is being plotted}
 
 \item{ncol}{Number of columns to be plotted. Defaults to NULL.}
+
+\item{scale}{Numeric value to scale output. Use 1e3 for thousand to million
+conversion for example. Defaults to 1.}
 
 \item{plot_title}{Title of the plot. Defaults to NULL.}
 
