@@ -1,7 +1,7 @@
 Package: STATEROOM
 Type: Package
 Title: SpaTiAl resulTs gEneRatOr fOr iMpact (STATEROOM)
-Version: 1.1.0
+Version: 1.2.0
 Authors@R: c(
     person("Abhijeet", "Mishra", , "A.Mishra@cgiar.org", role = c("aut", "cre"))
     )
@@ -15,6 +15,7 @@ Imports:
     sf (>= 1.0.12),
     viridis (>= 0.6.3),
     ggthemes (>= 4.2.4),
+    magclass (>= 6.9.0),
     utils,
     stats
 Remotes:
